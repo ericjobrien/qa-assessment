@@ -7,10 +7,13 @@
   <style>
     body {
         font-family: sans-serif;
+        background-color: rgb(240, 53, 20);
+        margin-left: 40vw;
+        margin-top: 20vh;
     }
 
     #game-board {
-        border: solid 1px black;
+        border: dotted 5px rgb(231, 128, 10);
         margin-bottom: 2em;
     }
 
@@ -21,6 +24,11 @@
         text-align: center;
         font-size: 45px;
     }
+
+    #start-game {
+        border-radius: 20px;
+    }
+
   </style>
 </head>
 <body>
@@ -49,7 +57,17 @@
 
 <script>
   /* Tic-Tac Javascript */
+const startBtn = document.getElementById('start-game');
+startBtn.addEventListener('click', () => { 
+    const audio = document.createElement('audio');
+    const bodyEl = document.querySelector('body');
 
+    bodyEl.appendChild(audio);
+    audio.src = 'https://www.shockwave-sound.com/sound-effects/scream-sounds/cri-d-effroi-scream.wav';
+    audio.type = audio;
+    audio.autoplay = true;
+
+})
 
   // The board is a simple 9-element array of null-for-empty, "X", or "O"
   var board;
